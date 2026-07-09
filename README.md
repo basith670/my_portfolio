@@ -1,16 +1,131 @@
-# React + Vite
+# 🚀 Muhammad Basith K | Portfolio Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive personal portfolio showcasing my projects, technical skills, certifications, and experience as a **Python Full Stack Developer**.
 
-Currently, two official plugins are available:
+🌐 **Live Website:** https://my-portfolio-pi-pied-36.vercel.app
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## 📌 About
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+This portfolio was built to present my software engineering projects, technical expertise, certifications, and professional experience in a clean and modern interface.
 
-## Expanding the ESLint configuration
+It is fully responsive, optimized for performance, and deployed on **Vercel**.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## ✨ Features
+
+- Responsive Design
+- Modern UI/UX
+- Smooth Animations
+- Interactive Project Filtering
+- Resume Preview
+- Resume Download
+- Certifications Section
+- Industry Programs
+- Contact Section
+- SEO Optimized
+- Fast Loading
+- Mobile Friendly
+
+---
+
+## 🛠 Tech Stack
+
+- React.js
+- Vite
+- Tailwind CSS
+- JavaScript (ES6+)
+- HTML5
+- CSS3
+- React Icons
+- Vercel
+
+---
+
+## 📂 Project Structure
+
+```text
+src/
+│
+├── components/
+│   ├── common/
+│   ├── layout/
+│   └── sections/
+│
+├── data/
+├── constants/
+├── styles/
+├── App.jsx
+└── main.jsx
+
+public/
+├── images/
+├── projects/
+├── certificates/
+└── resume/
+```
+
+---
+
+## 🚀 Getting Started
+
+Clone the repository
+
+```bash
+git clone https://github.com/basith670/my_portfolio.git
+```
+
+Move into the project
+
+```bash
+cd my_portfolio
+```
+
+Install dependencies
+
+```bash
+npm install
+```
+
+Run the development server
+
+```bash
+npm run dev
+```
+
+Build for production
+
+```bash
+npm run build
+```
+
+---
+
+## 📄 Resume
+
+My latest resume is available directly from the portfolio website.
+
+---
+
+## 📬 Contact
+
+**Muhammad Basith K**
+
+📧 Email: basithkdrbk@gmail.com
+
+💼 LinkedIn:
+https://www.linkedin.com/in/muhammad-basith-k-13307034b
+
+💻 GitHub:
+https://github.com/basith670
+
+🌐 Portfolio:
+https://my-portfolio-pi-pied-36.vercel.app
+
+---
+
+## ⭐ If you like this project
+
+Please consider giving it a ⭐ on GitHub.
