@@ -19,7 +19,7 @@ const projects = [
         "Bootstrap",
       ],
   
-      github: "https://github.com/basith670",
+      github: "https://github.com/basith670/city-hospital-management-system",
       live: "https://city-hospital-management-system.onrender.com",
     },
   
@@ -43,8 +43,8 @@ const projects = [
         "Tailwind",
       ],
   
-      github: "https://github.com/basith670",
-      live: "#",
+      github: "https://github.com/basith670/PrepPilot",
+      live: "https://preppilot-tx5z.onrender.com/",
     },
   
     {
@@ -90,7 +90,7 @@ const projects = [
         "Pandas",
       ],
   
-      github: "https://github.com/basith670",
+      github: "https://github.com/hrishidev1/Terrawatch2",
       live: "",
     },
   ];
