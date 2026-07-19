@@ -1,28 +1,27 @@
 const projects = [
-    {
-      id: 1,
-      title: "City Hospital Management System",
-      image: "/projects/hospital.png",
-  
-      category: "Full Stack",
-      status: "Live",
-  
-      description:
-        "A complete Hospital Management System with doctor & patient authentication, appointment booking, medical report management, role-based dashboards, secure authentication, and responsive UI.",
-  
-      tech: [
-        "React",
-        "Django",
-        "DRF",
-        "PostgreSQL",
-        "JWT",
-        "Bootstrap",
-      ],
-  
-      github: "https://github.com/basith670/city-hospital-management-system",
-      live: "https://city-hospital-management-system.onrender.com",
+  {
+    id: 1,
+    title: "JobSphere",
+    image: "/projects/jobsphere.png",
+
+    category: "Full Stack",
+    status: "Live",
+
+    description:
+      "Full-stack job portal built with React and Django REST Framework featuring secure JWT authentication, role-based access for job seekers and recruiters, job posting, application tracking, responsive dashboards, and RESTful APIs.",
+
+    tech: [
+      "React",
+      "Django",
+      "DRF",
+      "PostgreSQL",
+      "JWT",
+    ],
+
+    github: "https://github.com/basith670/JobSphere",
+    live: "https://job-sphere-chi.vercel.app/",
     },
-  
+
     {
       id: 2,
       title: "PrepPilot",
@@ -46,17 +45,18 @@ const projects = [
       github: "https://github.com/basith670/PrepPilot",
       live: "https://preppilot-tx5z.onrender.com/",
     },
-  
+    
     {
+
       id: 3,
-      title: "JobSphere",
-      image: "/projects/jobsphere.png",
+      title: "City Hospital Management System",
+      image: "/projects/hospital.png",
   
       category: "Full Stack",
-      status: "In Progress",
+      status: "Live",
   
       description:
-        "Modern recruitment portal connecting employers and job seekers with secure authentication, job posting, application tracking, profile management, and responsive dashboards.",
+        "A complete Hospital Management System with doctor & patient authentication, appointment booking, medical report management, role-based dashboards, secure authentication, and responsive UI.",
   
       tech: [
         "React",
@@ -64,11 +64,14 @@ const projects = [
         "DRF",
         "PostgreSQL",
         "JWT",
+        "Bootstrap",
       ],
   
-      github: "https://github.com/basith670",
-      live: "#",
+      github: "https://github.com/basith670/city-hospital-management-system",
+      live: "https://city-hospital-management-system.onrender.com",
     },
+  
+  
   
     {
       id: 4,
