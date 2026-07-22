@@ -1,38 +1,53 @@
 import { useEffect, useState } from "react";
 
-function ScrollProgress() {
+function ScrollProgress({
+  color = "bg-blue-600",
+  height = "h-1",
+}) {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const totalHeight =
+    let ticking = false;
+
+    const updateProgress = () => {
+      const scrollTop = window.scrollY;
+      const docHeight =
         document.documentElement.scrollHeight -
         document.documentElement.clientHeight;
 
-      const scroll = window.scrollY;
-
-      const percentage = (scroll / totalHeight) * 100;
+      const percentage =
+        docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
 
       setProgress(percentage);
+      ticking = false;
+    };
+
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(updateProgress);
+        ticking = true;
+      }
     };
 
     window.addEventListener("scroll", handleScroll);
 
-    handleScroll();
+    updateProgress();
 
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   return (
-    <div className="fixed top-0 left-0 w-full h-1 z-[9999]">
-
+    <div
+      className={`fixed top-0 left-0 w-full ${height} z-[9999] bg-transparent`}
+    >
       <div
-        className="h-full bg-blue-600 transition-all duration-150"
+        className={`h-full ${color} rounded-r-full transition-[width] duration-150 ease-out`}
         style={{
           width: `${progress}%`,
         }}
       />
-
     </div>
   );
 }

@@ -20,7 +20,7 @@ function Projects() {
     <FadeIn>
       <section
         id="projects"
-        className="py-28 bg-slate-50"
+        className="py-20 lg:py-28 bg-slate-50"
       >
         <div className="max-w-7xl mx-auto px-6">
 
@@ -28,15 +28,15 @@ function Projects() {
 
           <div className="text-center">
 
-            <p className="uppercase tracking-[0.3em] text-blue-600 font-semibold">
+            <p className="uppercase tracking-[0.25em] text-blue-600 font-semibold text-sm sm:text-base">
               Portfolio
             </p>
 
-            <h2 className="mt-4 text-5xl font-bold text-slate-900">
+            <h2 className="mt-4 text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900">
               Featured Projects
             </h2>
 
-            <p className="mt-6 max-w-2xl mx-auto text-slate-600">
+            <p className="mt-6 max-w-2xl mx-auto text-base sm:text-lg text-slate-600 leading-7">
               Some of the real-world applications I have built using React,
               Django, Django REST Framework, PostgreSQL and Machine Learning.
             </p>
@@ -45,14 +45,14 @@ function Projects() {
 
           {/* Filter Buttons */}
 
-          <div className="flex flex-wrap justify-center gap-4 mt-14">
+          <div className="flex flex-wrap justify-center gap-3 sm:gap-4 mt-12 lg:mt-14">
 
             {filters.map((filter) => (
 
               <button
                 key={filter}
                 onClick={() => setActiveFilter(filter)}
-                className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 ${
+                className={`px-4 sm:px-6 py-2.5 sm:py-3 rounded-full font-semibold text-sm sm:text-base transition-all duration-300 ${
                   activeFilter === filter
                     ? "bg-blue-600 text-white shadow-lg"
                     : "bg-white border border-slate-300 text-slate-700 hover:bg-blue-50 hover:border-blue-600"
@@ -67,13 +67,13 @@ function Projects() {
 
           {/* Project Cards */}
 
-          <div className="grid lg:grid-cols-2 gap-10 mt-20">
+          <div className="grid md:grid-cols-2 gap-8 lg:gap-10 mt-16 lg:mt-20">
 
             {filteredProjects.map((project) => (
 
               <div
                 key={project.id}
-                className="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-500"
+                className="bg-white rounded-2xl lg:rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-500"
               >
 
                 {/* Image */}
@@ -83,18 +83,18 @@ function Projects() {
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-72 object-cover transition duration-700 group-hover:scale-110"
+                    className="w-full h-56 sm:h-64 lg:h-72 object-cover transition duration-700 group-hover:scale-110"
                   />
 
                   {/* Overlay */}
 
-                  <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center gap-4">
+                  <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center gap-3">
 
                     <a
                       href={project.github}
                       target="_blank"
                       rel="noreferrer"
-                      className="px-5 py-3 rounded-xl bg-white text-slate-900 font-semibold hover:bg-blue-600 hover:text-white transition"
+                      className="px-4 py-2.5 rounded-xl bg-white text-slate-900 font-semibold hover:bg-blue-600 hover:text-white transition"
                     >
                       Repository
                     </a>
@@ -104,7 +104,7 @@ function Projects() {
                         href={project.live}
                         target="_blank"
                         rel="noreferrer"
-                        className="px-5 py-3 rounded-xl bg-blue-600 text-white font-semibold hover:bg-blue-700 transition"
+                        className="px-4 py-2.5 rounded-xl bg-blue-600 text-white font-semibold hover:bg-blue-700 transition"
                       >
                         Live Demo
                       </a>
@@ -114,9 +114,9 @@ function Projects() {
 
                   {/* Category */}
 
-                  <div className="absolute top-5 left-5">
+                  <div className="absolute top-4 left-4">
 
-                    <span className="px-4 py-2 rounded-full bg-blue-600 text-white text-sm font-semibold shadow-lg">
+                    <span className="px-3 py-1.5 rounded-full bg-blue-600 text-white text-xs sm:text-sm font-semibold shadow-lg">
                       {project.category}
                     </span>
 
@@ -124,9 +124,9 @@ function Projects() {
 
                   {/* Status */}
 
-                  <div className="absolute top-5 right-5">
+                  <div className="absolute top-4 right-4">
 
-                    <span className="px-4 py-2 rounded-full bg-white text-slate-900 text-sm font-semibold shadow-lg">
+                    <span className="px-3 py-1.5 rounded-full bg-white text-slate-900 text-xs sm:text-sm font-semibold shadow-lg">
                       {project.status}
                     </span>
 
@@ -136,25 +136,25 @@ function Projects() {
 
                 {/* Content */}
 
-                <div className="p-8">
+                <div className="p-6 lg:p-8">
 
-                  <h3 className="text-2xl font-bold text-slate-900">
+                  <h3 className="text-xl sm:text-2xl font-bold text-slate-900">
                     {project.title}
                   </h3>
 
-                  <p className="mt-4 text-slate-600 leading-7">
+                  <p className="mt-4 text-slate-600 leading-7 text-sm sm:text-base">
                     {project.description}
                   </p>
 
                   {/* Technologies */}
 
-                  <div className="flex flex-wrap gap-3 mt-6">
+                  <div className="flex flex-wrap gap-2 sm:gap-3 mt-6">
 
                     {project.tech.map((tech) => (
 
                       <span
                         key={tech}
-                        className="px-4 py-2 rounded-full bg-slate-100 text-slate-700 text-sm font-medium hover:bg-blue-600 hover:text-white transition duration-300"
+                        className="px-3 py-1.5 rounded-full bg-slate-100 text-slate-700 text-xs sm:text-sm font-medium hover:bg-blue-600 hover:text-white transition duration-300"
                       >
                         {tech}
                       </span>
@@ -165,13 +165,13 @@ function Projects() {
 
                   {/* Buttons */}
 
-                  <div className="flex gap-4 mt-8">
+                  <div className="flex flex-col sm:flex-row gap-3 mt-8">
 
                     <a
                       href={project.github}
                       target="_blank"
                       rel="noreferrer"
-                      className="flex items-center gap-2 px-5 py-3 rounded-xl bg-slate-900 text-white hover:bg-slate-800 transition"
+                      className="flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-slate-900 text-white hover:bg-slate-800 transition"
                     >
                       <FiGithub />
                       Repository
@@ -182,7 +182,7 @@ function Projects() {
                         href={project.live}
                         target="_blank"
                         rel="noreferrer"
-                        className="flex items-center gap-2 px-5 py-3 rounded-xl bg-blue-600 text-white hover:bg-blue-700 transition"
+                        className="flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-blue-600 text-white hover:bg-blue-700 transition"
                       >
                         <FiExternalLink />
                         Live Demo

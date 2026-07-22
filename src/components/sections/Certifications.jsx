@@ -11,64 +11,76 @@ function Certifications() {
     <FadeIn>
       <section
         id="certifications"
-        className="py-32 bg-white"
+        className="py-20 lg:py-32 bg-white"
       >
         <div className="max-w-7xl mx-auto px-6">
 
+          {/* Heading */}
+
           <div className="text-center">
 
-            <p className="uppercase tracking-[0.3em] text-blue-600 font-semibold">
+            <p className="uppercase tracking-[0.25em] text-blue-600 font-semibold text-sm sm:text-base">
               Certifications
             </p>
 
-            <h2 className="mt-4 text-5xl font-bold text-slate-900">
+            <h2 className="mt-4 text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900">
               Professional Certifications
             </h2>
 
-            <p className="mt-6 max-w-2xl mx-auto text-slate-600">
+            <p className="mt-6 max-w-2xl mx-auto text-base sm:text-lg leading-7 sm:leading-8 text-slate-600">
               Certifications and industry-recognized credentials that
               demonstrate continuous learning and technical expertise.
             </p>
 
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-20">
+          {/* Cards */}
+
+          <div className="grid sm:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8 mt-16 lg:mt-20">
 
             {certifications.map((item) => (
 
               <div
                 key={item.id}
-                className="bg-slate-50 rounded-3xl p-8 border border-slate-200 hover:-translate-y-2 hover:shadow-2xl transition duration-300"
+                className="bg-slate-50 rounded-2xl lg:rounded-3xl p-6 lg:p-8 border border-slate-200 hover:-translate-y-2 hover:shadow-2xl transition-all duration-300"
               >
 
+                {/* Icon */}
+
                 <div
-                  className={`w-16 h-16 rounded-2xl ${item.color} text-white flex items-center justify-center text-3xl`}
+                  className={`w-14 h-14 lg:w-16 lg:h-16 rounded-2xl ${item.color} text-white flex items-center justify-center text-2xl lg:text-3xl`}
                 >
                   <FiAward />
                 </div>
 
-                <h3 className="mt-8 text-2xl font-bold text-slate-900">
+                {/* Title */}
+
+                <h3 className="mt-6 lg:mt-8 text-xl sm:text-2xl font-bold text-slate-900 leading-snug">
                   {item.title}
                 </h3>
 
-                <p className="mt-3 text-blue-600 font-semibold">
+                {/* Issuer */}
+
+                <p className="mt-2 lg:mt-3 text-blue-600 font-semibold text-sm sm:text-base">
                   {item.issuer}
                 </p>
 
-                <p className="mt-2 text-slate-500">
+                {/* Year */}
+
+                <p className="mt-2 text-sm sm:text-base text-slate-500">
                   {item.year}
                 </p>
+
+                {/* Button */}
 
                 <a
                   href={item.file}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-8 inline-flex items-center gap-2 text-blue-600 font-semibold hover:text-blue-700"
+                  className="mt-6 lg:mt-8 inline-flex items-center gap-2 text-blue-600 font-semibold hover:text-blue-700 transition-colors duration-300"
                 >
                   View Certificate
-
                   <FiExternalLink />
-
                 </a>
 
               </div>

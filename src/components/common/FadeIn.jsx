@@ -1,18 +1,26 @@
 import { motion } from "framer-motion";
 
-function FadeIn({ children, delay = 0, direction = "up" }) {
+function FadeIn({
+  children,
+  delay = 0,
+  duration = 0.7,
+  direction = "up",
+  distance = 40,
+  className = "",
+}) {
   const variants = {
-    up: { y: 40, x: 0 },
-    down: { y: -40, x: 0 },
-    left: { x: -40, y: 0 },
-    right: { x: 40, y: 0 },
+    up: { y: distance, x: 0 },
+    down: { y: -distance, x: 0 },
+    left: { x: -distance, y: 0 },
+    right: { x: distance, y: 0 },
   };
 
   return (
     <motion.div
+      className={className}
       initial={{
         opacity: 0,
-        ...variants[direction],
+        ...(variants[direction] || variants.up),
       }}
       whileInView={{
         opacity: 1,
@@ -20,10 +28,14 @@ function FadeIn({ children, delay = 0, direction = "up" }) {
         y: 0,
       }}
       transition={{
-        duration: 0.7,
+        duration,
         delay,
+        ease: "easeOut",
       }}
-      viewport={{ once: true }}
+      viewport={{
+        once: true,
+        amount: 0.2,
+      }}
     >
       {children}
     </motion.div>

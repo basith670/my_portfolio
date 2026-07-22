@@ -1,25 +1,77 @@
 @import "tailwindcss";
+
+/* ===========================
+   Global
+=========================== */
+
 html {
   scroll-behavior: smooth;
 }
+
+/* ===========================
+   Floating Animation
+=========================== */
+
 @keyframes float {
-
-  0%{
-    transform:translateY(0px);
+  0% {
+    transform: translateY(0);
   }
 
-  50%{
-    transform:translateY(-12px);
+  50% {
+    transform: translateY(-8px);
   }
 
-  100%{
-    transform:translateY(0px);
+  100% {
+    transform: translateY(0);
   }
-
 }
 
-.animate-float{
+.animate-float {
+  animation: float 7s ease-in-out infinite;
+  will-change: transform;
+}
 
-  animation:float 5s ease-in-out infinite;
+.animate-float:hover {
+  animation-play-state: paused;
+}
 
+/* ===========================
+   Typewriter Cursor
+=========================== */
+
+@keyframes cursorBlink {
+  0%,
+  45% {
+    opacity: 1;
+  }
+
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.cursor {
+  display: inline-block;
+  margin-left: 2px;
+  font-weight: 400;
+  animation: cursorBlink 0.9s infinite;
+}
+
+/* ===========================
+   Selection Color
+=========================== */
+
+::selection {
+  background: #2563eb;
+  color: white;
+}
+
+/* ===========================
+   Image Improvements
+=========================== */
+
+img {
+  user-select: none;
+  -webkit-user-drag: none;
 }
