@@ -1,34 +1,34 @@
 const experience = [
-    {
-      id: 1,
-      role: "Software Developer Intern",
-      company: "GlowLogics Solutions",
-      location: "Bangalore, India",
-      duration: "2025",
-      type: "Internship",
-  
-      description: [
-        "Developed responsive web interfaces using React and Bootstrap.",
-        "Worked with Django backend and REST APIs.",
-        "Collaborated with the development team using Git and GitHub.",
-        "Participated in debugging, testing and feature implementation.",
-      ],
-    },
-  
-    {
-      id: 2,
-      role: "Sales Representative",
-      company: "GlowLogics Solutions",
-      location: "Bangalore, India",
-      duration: "2024",
-      type: "Part Time",
-  
-      description: [
-        "Handled client communication and customer engagement.",
-        "Improved interpersonal and presentation skills.",
-        "Worked closely with different teams to achieve sales targets.",
-      ],
-    },
-  ];
-  
-  export default experience;
+  {
+    id: 1,
+    role: "Python Full Stack Developer Intern",
+    company: "Gen Corpus Data Hub",
+    location: "Kozhikode, Kerala, India",
+    duration: "Jan 2026 – Present",
+    type: "Internship",
+
+    description: [
+      "Developed and maintained full-stack web applications using Python, Django, Django REST Framework, React.js, and PostgreSQL.",
+      "Designed and integrated RESTful APIs, implementing authentication, CRUD operations, and secure backend services.",
+      "Built responsive React.js user interfaces and collaborated with backend development following clean architecture principles.",
+      "Worked with Git, GitHub, API integration, debugging, testing, and Agile development practices to deliver scalable applications.",
+    ],
+  },
+
+  {
+    id: 2,
+    role: "Inside Sales Representative",
+    company: "GlowLogics Solutions",
+    location: "Bengaluru, Karnataka, India",
+    duration: "Dec 2025 – Jan 2026",
+    type: "Full-Time",
+
+    description: [
+      "Collaborated with clients to understand business requirements and provide solution-oriented support.",
+      "Strengthened communication, stakeholder management, negotiation, and analytical problem-solving skills.",
+      "Worked with cross-functional teams to ensure client satisfaction and achieve business objectives.",
+    ],
+  },
+];
+
+export default experience;
