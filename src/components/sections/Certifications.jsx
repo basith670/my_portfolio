@@ -4,6 +4,7 @@ import certifications from "../../data/certifications";
 import {
   FiAward,
   FiExternalLink,
+  FiCheckCircle,
 } from "react-icons/fi";
 
 function Certifications() {
@@ -15,7 +16,7 @@ function Certifications() {
       >
         <div className="max-w-7xl mx-auto px-6">
 
-          {/* Heading */}
+          {/* ================= Heading ================= */}
 
           <div className="text-center">
 
@@ -34,7 +35,7 @@ function Certifications() {
 
           </div>
 
-          {/* Cards */}
+          {/* ================= Cards ================= */}
 
           <div className="grid sm:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8 mt-16 lg:mt-20">
 
@@ -71,17 +72,31 @@ function Certifications() {
                   {item.year}
                 </p>
 
-                {/* Button */}
+                {/* Score / Status */}
 
-                <a
-                  href={item.file}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-6 lg:mt-8 inline-flex items-center gap-2 text-blue-600 font-semibold hover:text-blue-700 transition-colors duration-300"
-                >
-                  View Certificate
-                  <FiExternalLink />
-                </a>
+                {item.score && item.status && (
+                  <div className="mt-4 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-green-100 text-green-700 text-sm font-semibold">
+                    <FiCheckCircle className="text-base" />
+
+                    <span>
+                      {item.status} · {item.score}
+                    </span>
+                  </div>
+                )}
+
+                {/* Certificate Link */}
+
+                <div>
+                  <a
+                    href={item.file}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-6 lg:mt-8 inline-flex items-center gap-2 text-blue-600 font-semibold hover:text-blue-700 transition-colors duration-300"
+                  >
+                    View Certificate
+                    <FiExternalLink />
+                  </a>
+                </div>
 
               </div>
 
