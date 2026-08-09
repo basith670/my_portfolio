@@ -3,6 +3,7 @@ const skills = [
       category: "Frontend",
       items: [
         "React.js",
+        "Next.js",
         "JavaScript",
         "HTML5",
         "CSS3",

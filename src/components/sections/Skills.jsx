@@ -5,6 +5,7 @@ const skills = [
     category: "Frontend",
     technologies: [
       "React",
+      "Next.js",
       "JavaScript",
       "HTML5",
       "CSS3",

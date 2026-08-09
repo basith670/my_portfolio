@@ -5,7 +5,7 @@ import projects from "../../data/projects";
 import { FiGithub, FiExternalLink } from "react-icons/fi";
 
 function Projects() {
-  const filters = ["All", "Full Stack", "AI Project", "Machine Learning"];
+  const filters = ["All", "Full Stack-React.js","Full Stack-Next.js", "Django", "Machine Learning","Deep Learning"];
 
   const [activeFilter, setActiveFilter] = useState("All");
 
