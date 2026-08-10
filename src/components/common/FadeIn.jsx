@@ -6,6 +6,7 @@ function FadeIn({
   duration = 0.7,
   direction = "up",
   distance = 40,
+  amount = 0.1,
   className = "",
 }) {
   const variants = {
@@ -34,7 +35,8 @@ function FadeIn({
       }}
       viewport={{
         once: true,
-        amount: 0.2,
+        amount,
+        margin: "0px 0px -100px 0px",
       }}
     >
       {children}

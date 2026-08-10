@@ -17,15 +17,15 @@ function Projects() {
         );
 
   return (
-    <FadeIn>
-      <section
-        id="projects"
-        className="py-20 lg:py-28 bg-slate-50"
-      >
-        <div className="max-w-7xl mx-auto px-6">
+    <section
+      id="projects"
+      className="py-20 lg:py-28 bg-slate-50"
+    >
+      <div className="max-w-7xl mx-auto px-6">
 
-          {/* Heading */}
+        {/* Heading */}
 
+        <FadeIn>
           <div className="text-center">
 
             <p className="uppercase tracking-[0.25em] text-blue-600 font-semibold text-sm sm:text-base">
@@ -37,14 +37,16 @@ function Projects() {
             </h2>
 
             <p className="mt-6 max-w-2xl mx-auto text-base sm:text-lg text-slate-600 leading-7">
-              Some of the real-world applications I have built using React,
-              Django, Django REST Framework, PostgreSQL and Machine Learning.
+              Some of the real-world applications I have built using React,Next.js,
+              Django, Django REST Framework, PostgreSQL and Machine Learning,Deep Learning.
             </p>
 
           </div>
+        </FadeIn>
 
-          {/* Filter Buttons */}
+        {/* Filter Buttons */}
 
+        <FadeIn delay={0.1}>
           <div className="flex flex-wrap justify-center gap-3 sm:gap-4 mt-12 lg:mt-14">
 
             {filters.map((filter) => (
@@ -64,15 +66,20 @@ function Projects() {
             ))}
 
           </div>
+        </FadeIn>
 
-          {/* Project Cards */}
+        {/* Project Cards */}
 
-          <div className="grid md:grid-cols-2 gap-8 lg:gap-10 mt-16 lg:mt-20">
+        <div className="grid md:grid-cols-2 gap-8 lg:gap-10 mt-16 lg:mt-20">
 
-            {filteredProjects.map((project) => (
+          {filteredProjects.map((project, index) => (
 
+            <FadeIn
+              key={project.id}
+              delay={0.05 * (index % 2)}
+              amount={0.05}
+            >
               <div
-                key={project.id}
                 className="bg-white rounded-2xl lg:rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-500"
               >
 
@@ -194,14 +201,14 @@ function Projects() {
                 </div>
 
               </div>
+            </FadeIn>
 
-            ))}
-
-          </div>
+          ))}
 
         </div>
-      </section>
-    </FadeIn>
+
+      </div>
+    </section>
   );
 }
 
