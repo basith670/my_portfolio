@@ -86,7 +86,7 @@ function Contact() {
                   <div>
                     <p className="text-sm text-slate-500">Location</p>
                     <p className="text-base sm:text-lg font-medium text-slate-900">
-                      Kerala, India
+                      Bengaluru, India
                     </p>
                   </div>
 
