@@ -1,6 +1,17 @@
 const certifications = [
   {
     id: 1,
+    title: "Full Stack Open",
+    issuer: "University of Helsinki",
+    year: "2026",
+    score: "5 ECTS, Grade 5",
+    status: "Completed",
+    file: "/certificates/full-stack-open.pdf",
+    color: "bg-emerald-600",
+  },
+
+  {
+    id: 2,
     title: "Deloitte Technology Job Simulation",
     issuer: "Forage × Deloitte",
     year: "2026",
@@ -9,8 +20,8 @@ const certifications = [
   },
 
   {
-    id: 2,
-    title: "AWS Academy Cloud Foundations",
+    id: 3,
+    title: "AWS Academy Machine Learning Foundations",
     issuer: "Amazon Web Services",
     year: "2024",
     file: "/certificates/aws.pdf",
@@ -18,7 +29,7 @@ const certifications = [
   },
 
   {
-    id: 3,
+    id: 4,
     title: "Fortinet Certified Associate",
     issuer: "Fortinet",
     year: "2025",
@@ -27,7 +38,7 @@ const certifications = [
   },
 
   {
-    id: 4,
+    id: 5,
     title: "Oracle Database Foundations",
     issuer: "Oracle",
     year: "2025",
@@ -36,7 +47,7 @@ const certifications = [
   },
 
   {
-    id: 5,
+    id: 6,
     title: "Networking Basics",
     issuer: "Cisco Networking Academy",
     year: "2024",
@@ -45,7 +56,7 @@ const certifications = [
   },
 
   {
-    id: 6,
+    id: 7,
     title: "Python Programming",
     issuer: "iskima Certification Authority",
     year: "2026",
