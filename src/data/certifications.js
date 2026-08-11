@@ -21,42 +21,6 @@ const certifications = [
 
   {
     id: 3,
-    title: "AWS Academy Machine Learning Foundations",
-    issuer: "Amazon Web Services",
-    year: "2024",
-    file: "/certificates/aws.pdf",
-    color: "bg-orange-500",
-  },
-
-  {
-    id: 4,
-    title: "Fortinet Certified Associate",
-    issuer: "Fortinet",
-    year: "2025",
-    file: "/certificates/fortinet.pdf",
-    color: "bg-red-600",
-  },
-
-  {
-    id: 5,
-    title: "Oracle Database Foundations",
-    issuer: "Oracle",
-    year: "2025",
-    file: "/certificates/oracle.pdf",
-    color: "bg-rose-600",
-  },
-
-  {
-    id: 6,
-    title: "Networking Basics",
-    issuer: "Cisco Networking Academy",
-    year: "2024",
-    file: "/certificates/cisco.pdf",
-    color: "bg-cyan-600",
-  },
-
-  {
-    id: 7,
     title: "Python Programming",
     issuer: "iskima Certification Authority",
     year: "2026",
@@ -65,6 +29,44 @@ const certifications = [
     file: "/certificates/python-programming.pdf",
     color: "bg-green-600",
   },
+
+  {
+    id: 4,
+    title: "AWS Academy Machine Learning Foundations",
+    issuer: "Amazon Web Services",
+    year: "2024",
+    file: "/certificates/aws.pdf",
+    color: "bg-orange-500",
+  },
+
+  {
+    id: 5,
+    title: "Fortinet Certified Associate",
+    issuer: "Fortinet",
+    year: "2025",
+    file: "/certificates/fortinet.pdf",
+    color: "bg-red-600",
+  },
+
+  {
+    id: 6,
+    title: "Oracle Database Foundations",
+    issuer: "Oracle",
+    year: "2025",
+    file: "/certificates/oracle.pdf",
+    color: "bg-rose-600",
+  },
+
+  {
+    id: 7,
+    title: "Networking Basics",
+    issuer: "Cisco Networking Academy",
+    year: "2024",
+    file: "/certificates/cisco.pdf",
+    color: "bg-cyan-600",
+  },
+
+ 
 ];
 
 export default certifications;
