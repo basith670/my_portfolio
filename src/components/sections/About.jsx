@@ -12,7 +12,7 @@ function About() {
     {
       icon: <FaCode />,
       title: "Frontend",
-      text: "React.js, JavaScript, HTML5, CSS3, Tailwind CSS, Bootstrap",
+      text: "React.js, Next.js, JavaScript, HTML5, CSS3, Tailwind CSS, Bootstrap",
     },
     {
       icon: <FaServer />,
