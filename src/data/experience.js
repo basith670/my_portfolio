@@ -4,7 +4,7 @@ const experience = [
     role: "Python Full Stack Developer Intern",
     company: "Gen Corpus Data Hub",
     location: "Kozhikode, Kerala, India",
-    duration: "Jan 2026 – Present",
+    duration: "Jan 2026 – July 2026",
     type: "Internship",
 
     description: [
