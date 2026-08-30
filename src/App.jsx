@@ -5,6 +5,7 @@ import ScrollProgress from "./components/common/ScrollProgress";
 import ScrollToTop from "./components/common/ScrollToTop";
 
 import Navbar from "./components/layout/Navbar";
+
 import Hero from "./components/sections/Hero";
 import Stats from "./components/sections/Stats";
 import About from "./components/sections/About";
@@ -12,9 +13,11 @@ import Skills from "./components/sections/Skills";
 import Projects from "./components/sections/Projects";
 import Experience from "./components/sections/Experience";
 import Education from "./components/sections/Education";
+import Research from "./components/sections/Research";
 import Certifications from "./components/sections/Certifications";
 import IndustryPrograms from "./components/sections/IndustryPrograms";
 import Contact from "./components/sections/Contact";
+
 import Footer from "./components/layout/Footer";
 
 function App() {
@@ -35,22 +38,35 @@ function App() {
   return (
     <>
       <ScrollProgress />
+
       <Navbar />
 
       <main className="pt-24">
         <Hero />
+
         <Stats />
+
         <About />
+
         <Skills />
+
         <Projects />
+
         <Experience />
+
         <Education />
+
+        <Research />
+
         <Certifications />
+
         <IndustryPrograms />
+
         <Contact />
       </main>
 
       <ScrollToTop />
+
       <Footer />
     </>
   );

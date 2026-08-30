@@ -5,6 +5,8 @@ import {
   FiBookOpen,
   FiCalendar,
   FiAward,
+  FiExternalLink,
+  FiFileText,
 } from "react-icons/fi";
 
 function Education() {
@@ -56,9 +58,7 @@ function Education() {
                   <div className="flex items-start gap-4">
 
                     <div className="w-12 h-12 lg:w-14 lg:h-14 rounded-2xl bg-blue-600 text-white flex items-center justify-center text-xl lg:text-2xl flex-shrink-0">
-
                       <FiBookOpen />
-
                     </div>
 
                     <div>
@@ -80,19 +80,13 @@ function Education() {
                   <div className="flex flex-col lg:items-end gap-3">
 
                     <div className="flex items-center gap-2 text-sm sm:text-base text-slate-500">
-
                       <FiCalendar />
-
                       <span>{item.duration}</span>
-
                     </div>
 
                     <div className="flex items-center gap-2 text-sm sm:text-base text-blue-600 font-semibold">
-
                       <FiAward />
-
                       <span>{item.score}</span>
-
                     </div>
 
                   </div>
@@ -110,6 +104,30 @@ function Education() {
                 <p className="mt-4 text-sm sm:text-base leading-7 sm:leading-8 text-slate-600">
                   {item.description}
                 </p>
+
+                {/* Academic Document */}
+
+                {item.certificate && (
+                  <div className="mt-6 pt-5 border-t border-slate-200">
+
+                    <a
+                      href={item.certificate}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`Open ${item.certificateLabel}`}
+                      className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-blue-600 text-white font-semibold text-sm sm:text-base hover:bg-blue-700 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300"
+                    >
+                      <FiFileText />
+
+                      <span>
+                        {item.certificateLabel}
+                      </span>
+
+                      <FiExternalLink className="text-sm" />
+                    </a>
+
+                  </div>
+                )}
 
               </div>
 

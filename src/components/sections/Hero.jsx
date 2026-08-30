@@ -54,7 +54,7 @@ function Hero() {
 
               <p className="mt-8 max-w-xl text-base sm:text-lg leading-7 sm:leading-8 text-slate-600">
                 Passionate about building scalable, secure and responsive
-                web applications using React, Django, Django REST Framework,
+                web applications using React, Next, Django, Django REST Framework,
                 and PostgreSQL. I enjoy solving real-world problems through
                 clean architecture and modern software engineering.
               </p>
