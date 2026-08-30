@@ -5,7 +5,7 @@ const education = [
       field: "Computer Science and Engineering",
       institute: "SRM Institute of Science and Technology",
       duration: "2022 – 2026",
-      score: "CGPA: 7.29 / 10",
+      score: "CGPA: 7.63 / 10",
       description:
         "Pursuing Computer Science and Engineering with a strong focus on Software Engineering, Full Stack Development, Database Management Systems, Machine Learning, Artificial Intelligence, Data Structures & Algorithms, and Computer Networks.",
     },
