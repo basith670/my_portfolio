@@ -7,6 +7,7 @@ import {
   MdEmail,
   MdLocationOn,
   MdWorkOutline,
+  MdPhone,
 } from "react-icons/md";
 
 function Contact() {
@@ -67,6 +68,26 @@ function Contact() {
 
                 <p className="mt-1 break-all text-base font-semibold text-white transition group-hover:text-blue-300 sm:text-lg">
                   basithkdrbk@gmail.com
+                </p>
+              </div>
+            </a>
+
+            {/* Phone */}
+            <a
+              href="tel:+919048884058"
+              className="group flex items-start gap-4 border-b border-white/10 py-6"
+            >
+              <div className="grid h-11 w-11 shrink-0 place-items-center rounded-full border border-white/10 bg-white/[0.02] text-xl text-slate-400 transition group-hover:border-blue-400/40 group-hover:bg-blue-500/10 group-hover:text-blue-400">
+                <MdPhone />
+              </div>
+
+              <div>
+                <p className="font-mono text-xs uppercase tracking-wider text-blue-400">
+                  Phone
+                </p>
+
+                <p className="mt-1 text-base font-semibold text-white transition group-hover:text-blue-300 sm:text-lg">
+                  +91 90488 84058
                 </p>
               </div>
             </a>
