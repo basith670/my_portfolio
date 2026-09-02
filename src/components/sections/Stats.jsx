@@ -1,78 +1,45 @@
-import FadeIn from "../common/FadeIn";
-import AnimatedCounter from "../common/AnimatedCounter";
+import { useEffect, useRef, useState } from "react";
 
 const stats = [
-  {
-    end: 10,
-    suffix: "+",
-    label: "Projects Completed",
-  },
-  {
-    end: 300,
-    suffix: "+",
-    label: "HackerRank Problems",
-  },
-  {
-    end: 3,
-    suffix: "+",
-    label: "Major Full Stack Projects",
-  },
-  {
-    end: 2,
-    suffix: "",
-    label: "Industry Programs",
-  },
+  [15, "full-stack features shipped"],
+  [24, "REST API endpoints"],
+  [25, "pull requests merged"],
+  [43, "bugs resolved"],
 ];
+
+function Counter({ end }) {
+  const [value, setValue] = useState(0);
+  const ref = useRef(null);
+  useEffect(() => {
+    const observer = new IntersectionObserver(([entry]) => {
+      if (!entry.isIntersecting) return;
+      let start = 0;
+      const step = Math.max(1, Math.ceil(end / 30));
+      const timer = setInterval(() => {
+        start = Math.min(end, start + step);
+        setValue(start);
+        if (start === end) clearInterval(timer);
+      }, 25);
+      observer.disconnect();
+    }, { threshold: .4 });
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, [end]);
+  return <span ref={ref}>{value}</span>;
+}
 
 function Stats() {
   return (
-    <FadeIn>
-      <section
-        id="stats"
-        className="py-16 sm:py-20 lg:py-24 bg-gradient-to-r from-blue-600 to-blue-700"
-      >
-        <div className="max-w-7xl mx-auto px-6">
-
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 lg:gap-8">
-
-            {stats.map((item) => (
-
-              <div
-                key={item.label}
-                className="group text-center bg-white/10 backdrop-blur-md rounded-2xl lg:rounded-3xl py-6 sm:py-8 lg:py-10 px-4 sm:px-6 border border-white/20 hover:bg-white/20 hover:-translate-y-2 hover:shadow-2xl transition-all duration-300"
-              >
-
-                {/* Animated Counter */}
-
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white">
-
-                  <AnimatedCounter
-                    end={item.end}
-                    duration={2000}
-                  />
-
-                  {item.suffix}
-
-                </h2>
-
-                {/* Label */}
-
-                <p className="mt-3 sm:mt-4 text-sm sm:text-base text-blue-100 font-medium leading-6 group-hover:text-white transition duration-300">
-
-                  {item.label}
-
-                </p>
-
-              </div>
-
-            ))}
-
+    <section id="stats" className="border-b border-white/10 bg-[#0b0f16]">
+      <div className="mx-auto grid max-w-7xl grid-cols-2 divide-x divide-y divide-white/10 lg:grid-cols-4 lg:divide-y-0">
+        {stats.map(([value, label]) => (
+          <div key={label} className="px-5 py-8 sm:px-8 lg:py-10">
+            <div className="text-3xl font-black tracking-tight text-white sm:text-4xl"><Counter end={value} />+</div>
+            <div className="mt-2 max-w-[170px] text-xs font-medium uppercase leading-5 tracking-[.12em] text-slate-500">{label}</div>
           </div>
-
-        </div>
-      </section>
-    </FadeIn>
+        ))}
+      </div>
+    </section>
   );
 }
-
 export default Stats;

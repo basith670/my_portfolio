@@ -1,77 +1,48 @@
 @import "tailwindcss";
 
-/* ===========================
-   Global
-=========================== */
-
-html {
-  scroll-behavior: smooth;
+:root {
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #e8edf7;
+  background: #070a0f;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
 }
 
-/* ===========================
-   Floating Animation
-=========================== */
+html { scroll-behavior: smooth; }
+body { margin: 0; min-width: 320px; background: #070a0f; }
+* { box-sizing: border-box; }
+::selection { background: #2f6bff; color: white; }
 
-@keyframes float {
-  0% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-8px);
-  }
-
-  100% {
-    transform: translateY(0);
-  }
+.noise::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: .035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.45'/%3E%3C/svg%3E");
 }
 
-.animate-float {
-  animation: float 7s ease-in-out infinite;
-  will-change: transform;
+.grid-bg {
+  background-image: linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+  background-size: 44px 44px;
 }
 
-.animate-float:hover {
-  animation-play-state: paused;
-}
+.cursor { display: inline-block; margin-left: 3px; animation: blink .85s steps(1) infinite; }
+@keyframes blink { 50% { opacity: 0; } }
 
-/* ===========================
-   Typewriter Cursor
-=========================== */
+.float-slow { animation: float 7s ease-in-out infinite; }
+@keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
 
-@keyframes cursorBlink {
-  0%,
-  45% {
-    opacity: 1;
-  }
+.reveal-line { position: relative; overflow: hidden; }
+.reveal-line::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 1px; background: #2f6bff; transform: scaleX(0); transform-origin: left; transition: transform .45s ease; }
+.reveal-line:hover::after { transform: scaleX(1); }
 
-  50%,
-  100% {
-    opacity: 0;
-  }
-}
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: #070a0f; }
+::-webkit-scrollbar-thumb { background: #293344; border-radius: 999px; }
+::-webkit-scrollbar-thumb:hover { background: #3a485d; }
 
-.cursor {
-  display: inline-block;
-  margin-left: 2px;
-  font-weight: 400;
-  animation: cursorBlink 0.9s infinite;
-}
-
-/* ===========================
-   Selection Color
-=========================== */
-
-::selection {
-  background: #2563eb;
-  color: white;
-}
-
-/* ===========================
-   Image Improvements
-=========================== */
-
-img {
-  user-select: none;
-  -webkit-user-drag: none;
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
 }

@@ -1,215 +1,31 @@
-import { useState } from "react";
-import FadeIn from "../common/FadeIn";
 import projects from "../../data/projects";
 
-import { FiGithub, FiExternalLink } from "react-icons/fi";
-
 function Projects() {
-  const filters = ["All", "Full Stack-React.js","Full Stack-Next.js", "Django", "Machine Learning","Deep Learning"];
-
-  const [activeFilter, setActiveFilter] = useState("All");
-
-  const filteredProjects =
-    activeFilter === "All"
-      ? projects
-      : projects.filter(
-          (project) => project.category === activeFilter
-        );
-
   return (
-    <section
-      id="projects"
-      className="py-20 lg:py-28 bg-slate-50"
-    >
-      <div className="max-w-7xl mx-auto px-6">
-
-        {/* Heading */}
-
-        <FadeIn>
-          <div className="text-center">
-
-            <p className="uppercase tracking-[0.25em] text-blue-600 font-semibold text-sm sm:text-base">
-              Portfolio
-            </p>
-
-            <h2 className="mt-4 text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900">
-              Featured Projects
-            </h2>
-
-            <p className="mt-6 max-w-2xl mx-auto text-base sm:text-lg text-slate-600 leading-7">
-              Some of the real-world applications I have built using React,Next.js,
-              Django, Django REST Framework, PostgreSQL and Machine Learning,Deep Learning.
-            </p>
-
-          </div>
-        </FadeIn>
-
-        {/* Filter Buttons */}
-
-        <FadeIn delay={0.1}>
-          <div className="flex flex-wrap justify-center gap-3 sm:gap-4 mt-12 lg:mt-14">
-
-            {filters.map((filter) => (
-
-              <button
-                key={filter}
-                onClick={() => setActiveFilter(filter)}
-                className={`px-4 sm:px-6 py-2.5 sm:py-3 rounded-full font-semibold text-sm sm:text-base transition-all duration-300 ${
-                  activeFilter === filter
-                    ? "bg-blue-600 text-white shadow-lg"
-                    : "bg-white border border-slate-300 text-slate-700 hover:bg-blue-50 hover:border-blue-600"
-                }`}
-              >
-                {filter}
-              </button>
-
-            ))}
-
-          </div>
-        </FadeIn>
-
-        {/* Project Cards */}
-
-        <div className="grid md:grid-cols-2 gap-8 lg:gap-10 mt-16 lg:mt-20">
-
-          {filteredProjects.map((project, index) => (
-
-            <FadeIn
-              key={project.id}
-              delay={0.05 * (index % 2)}
-              amount={0.05}
-            >
-              <div
-                className="bg-white rounded-2xl lg:rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-500"
-              >
-
-                {/* Image */}
-
-                <div className="relative overflow-hidden group">
-
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-56 sm:h-64 lg:h-72 object-cover transition duration-700 group-hover:scale-110"
-                  />
-
-                  {/* Overlay */}
-
-                  <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center gap-3">
-
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="px-4 py-2.5 rounded-xl bg-white text-slate-900 font-semibold hover:bg-blue-600 hover:text-white transition"
-                    >
-                      Repository
-                    </a>
-
-                    {project.live && (
-                      <a
-                        href={project.live}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="px-4 py-2.5 rounded-xl bg-blue-600 text-white font-semibold hover:bg-blue-700 transition"
-                      >
-                        Live Demo
-                      </a>
-                    )}
-
-                  </div>
-
-                  {/* Category */}
-
-                  <div className="absolute top-4 left-4">
-
-                    <span className="px-3 py-1.5 rounded-full bg-blue-600 text-white text-xs sm:text-sm font-semibold shadow-lg">
-                      {project.category}
-                    </span>
-
-                  </div>
-
-                  {/* Status */}
-
-                  <div className="absolute top-4 right-4">
-
-                    <span className="px-3 py-1.5 rounded-full bg-white text-slate-900 text-xs sm:text-sm font-semibold shadow-lg">
-                      {project.status}
-                    </span>
-
-                  </div>
-
+    <section id="projects" className="border-b border-white/10 bg-[#070a0f]">
+      <div className="mx-auto max-w-7xl px-5 py-24 sm:px-8 lg:py-32">
+        <div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between"><div><p className="font-mono text-xs font-bold uppercase tracking-[.25em] text-blue-400">03 / Selected work</p><h2 className="mt-4 text-4xl font-black tracking-tight text-white sm:text-6xl">Built, deployed, learned from.</h2></div><span className="font-mono text-xs text-slate-600">{String(projects.length).padStart(2,"0")} PROJECTS</span></div>
+        <div className="mt-14 grid gap-5 lg:grid-cols-2">
+          {projects.map((project, index) => (
+            <article key={project.id} className={`group overflow-hidden rounded-3xl border border-white/10 bg-[#0b0f16] ${index === 0 || index === 5 ? "lg:col-span-2" : ""}`}>
+              <div className={`grid ${index === 0 || index === 5 ? "lg:grid-cols-2" : ""}`}>
+                <div className="relative overflow-hidden bg-[#111722]">
+                  <img src={project.image} alt={project.title} className={`w-full object-cover transition duration-700 group-hover:scale-105 ${index === 0 || index === 5 ? "aspect-[16/10] lg:aspect-auto lg:h-full" : "aspect-[16/10]"}`} />
+                  <div className="absolute left-4 top-4 rounded-full border border-white/15 bg-black/50 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[.15em] text-white backdrop-blur">{project.status}</div>
                 </div>
-
-                {/* Content */}
-
-                <div className="p-6 lg:p-8">
-
-                  <h3 className="text-xl sm:text-2xl font-bold text-slate-900">
-                    {project.title}
-                  </h3>
-
-                  <p className="mt-4 text-slate-600 leading-7 text-sm sm:text-base">
-                    {project.description}
-                  </p>
-
-                  {/* Technologies */}
-
-                  <div className="flex flex-wrap gap-2 sm:gap-3 mt-6">
-
-                    {project.tech.map((tech) => (
-
-                      <span
-                        key={tech}
-                        className="px-3 py-1.5 rounded-full bg-slate-100 text-slate-700 text-xs sm:text-sm font-medium hover:bg-blue-600 hover:text-white transition duration-300"
-                      >
-                        {tech}
-                      </span>
-
-                    ))}
-
-                  </div>
-
-                  {/* Buttons */}
-
-                  <div className="flex flex-col sm:flex-row gap-3 mt-8">
-
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-slate-900 text-white hover:bg-slate-800 transition"
-                    >
-                      <FiGithub />
-                      Repository
-                    </a>
-
-                    {project.live && (
-                      <a
-                        href={project.live}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-blue-600 text-white hover:bg-blue-700 transition"
-                      >
-                        <FiExternalLink />
-                        Live Demo
-                      </a>
-                    )}
-
-                  </div>
-
+                <div className="flex flex-col p-6 sm:p-8">
+                  <div className="font-mono text-xs text-blue-400">{project.category}</div>
+                  <h3 className="mt-3 text-2xl font-black tracking-tight text-white sm:text-3xl">{project.title}</h3>
+                  <p className="mt-4 text-sm leading-7 text-slate-500">{project.description}</p>
+                  <div className="mt-6 flex flex-wrap gap-2">{project.tech.map(t => <span key={t} className="rounded-full bg-white/5 px-2.5 py-1 text-[11px] font-medium text-slate-400">{t}</span>)}</div>
+                  <div className="mt-auto flex flex-wrap gap-3 pt-8"><a href={project.github} target="_blank" rel="noreferrer" className="rounded-full border border-white/10 px-4 py-2.5 text-xs font-bold text-slate-300 hover:border-white/25 hover:text-white">GitHub ↗</a>{project.live && <a href={project.live} target="_blank" rel="noreferrer" className="rounded-full bg-white px-4 py-2.5 text-xs font-bold text-[#070a0f] hover:bg-blue-400">Live product ↗</a>}</div>
                 </div>
-
               </div>
-            </FadeIn>
-
+            </article>
           ))}
-
         </div>
-
       </div>
     </section>
   );
 }
-
 export default Projects;

@@ -1,113 +1,14 @@
-import FadeIn from "../common/FadeIn";
 import certifications from "../../data/certifications";
-
-import {
-  FiAward,
-  FiExternalLink,
-  FiCheckCircle,
-} from "react-icons/fi";
 
 function Certifications() {
   return (
-    <FadeIn>
-      <section
-        id="certifications"
-        className="py-20 lg:py-32 bg-white"
-      >
-        <div className="max-w-7xl mx-auto px-6">
-
-          {/* ================= Heading ================= */}
-
-          <div className="text-center">
-
-            <p className="uppercase tracking-[0.25em] text-blue-600 font-semibold text-sm sm:text-base">
-              Certifications
-            </p>
-
-            <h2 className="mt-4 text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900">
-              Professional Certifications
-            </h2>
-
-            <p className="mt-6 max-w-2xl mx-auto text-base sm:text-lg leading-7 sm:leading-8 text-slate-600">
-              Certifications and industry-recognized credentials that
-              demonstrate continuous learning and technical expertise.
-            </p>
-
-          </div>
-
-          {/* ================= Cards ================= */}
-
-          <div className="grid sm:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8 mt-16 lg:mt-20">
-
-            {certifications.map((item) => (
-
-              <div
-                key={item.id}
-                className="bg-slate-50 rounded-2xl lg:rounded-3xl p-6 lg:p-8 border border-slate-200 hover:-translate-y-2 hover:shadow-2xl transition-all duration-300"
-              >
-
-                {/* Icon */}
-
-                <div
-                  className={`w-14 h-14 lg:w-16 lg:h-16 rounded-2xl ${item.color} text-white flex items-center justify-center text-2xl lg:text-3xl`}
-                >
-                  <FiAward />
-                </div>
-
-                {/* Title */}
-
-                <h3 className="mt-6 lg:mt-8 text-xl sm:text-2xl font-bold text-slate-900 leading-snug">
-                  {item.title}
-                </h3>
-
-                {/* Issuer */}
-
-                <p className="mt-2 lg:mt-3 text-blue-600 font-semibold text-sm sm:text-base">
-                  {item.issuer}
-                </p>
-
-                {/* Year */}
-
-                <p className="mt-2 text-sm sm:text-base text-slate-500">
-                  {item.year}
-                </p>
-
-                {/* Score / Status */}
-
-                {item.score && item.status && (
-                  <div className="mt-4 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-green-100 text-green-700 text-sm font-semibold">
-                    <FiCheckCircle className="text-base" />
-
-                    <span>
-                      {item.status} · {item.score}
-                    </span>
-                  </div>
-                )}
-
-                {/* Certificate Link */}
-
-                <div>
-                  <a
-                    href={item.file}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-6 lg:mt-8 inline-flex items-center gap-2 text-blue-600 font-semibold hover:text-blue-700 transition-colors duration-300"
-                  >
-                    View Certificate
-                    <FiExternalLink />
-                  </a>
-                </div>
-
-              </div>
-
-            ))}
-
-          </div>
-
-        </div>
-      </section>
-    </FadeIn>
+    <section id="certifications" className="border-b border-white/10 bg-[#070a0f]">
+      <div className="mx-auto max-w-7xl px-5 py-24 sm:px-8 lg:py-32">
+        <p className="font-mono text-xs font-bold uppercase tracking-[.25em] text-blue-400">07 / Credentials</p>
+        <h2 className="mt-4 text-4xl font-black tracking-tight text-white sm:text-6xl">Proof of continuous learning.</h2>
+        <div className="mt-14 grid gap-px overflow-hidden rounded-3xl border border-white/10 bg-white/10 md:grid-cols-2 xl:grid-cols-3">{certifications.map((item) => <article key={item.id} className="bg-[#0b0f16] p-6 hover:bg-[#101620] transition-colors"><div className="flex items-start justify-between gap-4"><div><h3 className="font-bold text-white">{item.title}</h3><p className="mt-1 text-xs text-blue-400">{item.issuer}</p></div><span className="font-mono text-[10px] text-slate-600">{item.year}</span></div>{item.score && <p className="mt-4 text-xs font-semibold text-emerald-400">{item.status} · {item.score}</p>}<a href={item.file} target="_blank" rel="noreferrer" className="mt-6 inline-block text-xs font-bold text-slate-500 hover:text-white">View credential ↗</a></article>)}</div>
+      </div>
+    </section>
   );
 }
-
 export default Certifications;
