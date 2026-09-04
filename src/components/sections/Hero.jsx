@@ -1,6 +1,7 @@
 import { FaGithub, FaLinkedin, FaHackerrank } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import Typewriter from "../common/Typewriter";
+import ResumeDownload from "../common/ResumeDownload";
 
 function Hero() {
   return (
@@ -11,10 +12,10 @@ function Hero() {
         <div>
           <div className="mb-7 flex items-center gap-3 text-xs font-bold uppercase tracking-[.22em] text-blue-400">
             <span className="h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_16px_rgba(52,211,153,.8)]" />
-            Open to Software Engineering opportunities
+            Open to Software Engineering & ML Research roles
           </div>
 
-          <p className="text-sm font-medium text-slate-500">SOFTWARE ENGINEER · PYTHON / FULL STACK</p>
+          <p className="text-sm font-medium text-slate-500">SOFTWARE ENGINEER · FULL STACK & AI/ML</p>
           <h1 className="mt-4 max-w-4xl text-5xl font-black tracking-[-.055em] text-white sm:text-7xl lg:text-[6.5rem] lg:leading-[.92]">
             I build software
             <span className="block text-slate-500">that survives</span>
@@ -22,16 +23,16 @@ function Hero() {
           </h1>
 
           <div className="mt-8 h-9 text-lg font-semibold text-slate-300 sm:text-2xl">
-            <Typewriter words={["Python Full Stack Developer", "Backend Engineer", "React / Next.js Developer", "Problem Solver"]} typingSpeed={58} deletingSpeed={34} delaySpeed={1600} className="text-inherit" />
+            <Typewriter words={["Python Full Stack Developer", "ML / Computer Vision Researcher", "Backend Engineer", "React / Next.js Developer"]} typingSpeed={58} deletingSpeed={34} delaySpeed={1600} className="text-inherit" />
           </div>
 
           <p className="mt-7 max-w-2xl text-base leading-8 text-slate-400 sm:text-lg">
-            I design secure REST APIs, responsive interfaces, and database-backed systems with Python, Django, DRF, React, Next.js and PostgreSQL — with a bias toward clean architecture and real-world reliability.
+            I design secure REST APIs, responsive interfaces, and database-backed systems with Python, Django, DRF, React, Next.js and PostgreSQL — and do applied ML research in computer vision, publishing on uncertainty-aware semantic segmentation.
           </p>
 
           <div className="mt-9 flex flex-col gap-3 sm:flex-row">
             <a href="#projects" className="rounded-full bg-blue-500 px-6 py-3.5 text-center text-sm font-bold text-white shadow-lg shadow-blue-500/20 hover:bg-blue-400">Explore selected work ↗</a>
-            <a href="/resume/Muhammad_Basith_Resume.pdf" download className="rounded-full border border-white/15 px-6 py-3.5 text-center text-sm font-bold text-slate-200 hover:border-white/30 hover:bg-white/5">Download resume</a>
+            <ResumeDownload variant="primary" className="sm:w-auto" />
           </div>
 
           <div className="mt-10 flex items-center gap-5 text-xl text-slate-500">
@@ -57,7 +58,7 @@ function Hero() {
             </div>
             <div className="absolute bottom-8 right-0 translate-x-3 rounded-2xl border border-white/10 bg-[#111722]/95 px-4 py-3 shadow-xl backdrop-blur">
               <div className="font-mono text-[10px] text-slate-500">STACK</div>
-              <div className="mt-1 text-xs font-bold text-white">Python · React · Django</div>
+              <div className="mt-1 text-xs font-bold text-white">Python · React · PyTorch</div>
             </div>
           </div>
         </div>

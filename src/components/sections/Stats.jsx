@@ -1,10 +1,12 @@
 import { useEffect, useRef, useState } from "react";
 
 const stats = [
-  [15, "full-stack features shipped"],
-  [24, "REST API endpoints"],
-  [25, "pull requests merged"],
-  [43, "bugs resolved"],
+  [15, "full-stack features shipped", "+"],
+  [24, "REST API endpoints", "+"],
+  [25, "pull requests merged", "+"],
+  [43, "bugs resolved", "+"],
+  [1, "research paper presented", ""],
+  [65.81, "mIoU on satellite segmentation", "%"],
 ];
 
 function Counter({ end }) {
@@ -31,10 +33,10 @@ function Counter({ end }) {
 function Stats() {
   return (
     <section id="stats" className="border-b border-white/10 bg-[#0b0f16]">
-      <div className="mx-auto grid max-w-7xl grid-cols-2 divide-x divide-y divide-white/10 lg:grid-cols-4 lg:divide-y-0">
-        {stats.map(([value, label]) => (
+      <div className="mx-auto grid max-w-7xl grid-cols-2 divide-x divide-y divide-white/10 lg:grid-cols-3 lg:divide-y-0">
+        {stats.map(([value, label, suffix]) => (
           <div key={label} className="px-5 py-8 sm:px-8 lg:py-10">
-            <div className="text-3xl font-black tracking-tight text-white sm:text-4xl"><Counter end={value} />+</div>
+            <div className="text-3xl font-black tracking-tight text-white sm:text-4xl"><Counter end={value} />{suffix}</div>
             <div className="mt-2 max-w-[170px] text-xs font-medium uppercase leading-5 tracking-[.12em] text-slate-500">{label}</div>
           </div>
         ))}

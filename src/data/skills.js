@@ -33,6 +33,20 @@ const skills = [
     },
   
     {
+      category: "Machine Learning / AI",
+      items: [
+        "PyTorch",
+        "SegFormer",
+        "Vision Transformers",
+        "Evidential Deep Learning",
+        "Computer Vision",
+        "NumPy",
+        "Pandas",
+        "Google Gemini",
+      ],
+    },
+
+    {
       category: "Tools",
       items: [
         "Git",

@@ -35,8 +35,8 @@ function Contact() {
             </h2>
 
             <p className="mt-6 max-w-2xl text-base leading-7 text-slate-400 sm:text-lg">
-              I’m actively exploring Software Engineer, Backend Developer
-              and Full Stack Developer opportunities.
+              I’m actively exploring Software Engineer, Full Stack Developer
+              and ML/Applied Research opportunities.
             </p>
 
             {/* CTA */}
@@ -129,7 +129,7 @@ function Contact() {
                 </div>
 
                 <p className="mt-1 text-sm text-slate-500">
-                  Software Engineering · Backend · Full Stack
+                  Full Stack Development · Machine Learning · Research
                 </p>
               </div>
             </div>

@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import navigation from "../../constants/navigation";
+import ResumeDownload from "../common/ResumeDownload";
 
 function Navbar() {
   const [open, setOpen] = useState(false);
@@ -51,7 +52,7 @@ function Navbar() {
                 {item.title}
               </a>
             ))}
-            <a href="/resume/Muhammad_Basith_Resume.pdf" download onClick={() => setOpen(false)} className="mt-2 rounded-xl bg-blue-500 px-4 py-3 text-center text-sm font-bold text-white">Download Resume</a>
+            <ResumeDownload variant="secondary" className="mt-2" onNavigate={() => setOpen(false)} />
           </div>
         </nav>
       )}
