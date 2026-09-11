@@ -4,7 +4,7 @@ function Experience() {
   return (
     <section id="experience" className="border-b border-white/10 bg-[#0b0f16]">
       <div className="mx-auto max-w-7xl px-5 py-24 sm:px-8 lg:py-32">
-        <p className="font-mono text-xs font-bold uppercase tracking-[.25em] text-blue-400">04 / Experience</p>
+        <p className="font-mono text-xs font-bold uppercase tracking-[.25em] text-blue-400">05 / Experience</p>
         <h2 className="mt-4 text-4xl font-black tracking-tight text-white sm:text-6xl">Where I learned to ship.</h2>
         <div className="mt-14 border-l border-white/10">
           {experience.map((item) => (
