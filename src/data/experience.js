@@ -4,7 +4,7 @@ const experience = [
     role: "Python Full Stack Developer Intern",
     company: "Gen Corpus Data Hub",
     location: "Kozhikode, Kerala, India",
-    duration: "Jan 2026 – July 2026",
+    duration: "April 2026 – September 2026",
     type: "Internship",
 
     description: [
@@ -13,6 +13,21 @@ const experience = [
       "Built responsive React.js user interfaces and collaborated with backend development following clean architecture principles.",
       "Worked with Git, GitHub, API integration, debugging, testing, and Agile development practices to deliver scalable applications.",
     ],
+
+    certificates: [
+      {
+        title: "Python Full Stack with FastAPI — Internship Certificate",
+        description:
+          "6-Month Internship in Python Full Stack with FastAPI at Gen Corpus Data Hub.",
+        link: "/certificates/gen-corpus-internship.pdf",
+      },
+      {
+        title: "Python Full Stack with FastAPI — Professional Training",
+        description:
+          "6-Month Professional Training Program covering hands-on exercises and final project evaluation.",
+        link: "/certificates/gen-corpus-python-full-stack.pdf",
+      },
+    ],
   },
 
   {
@@ -20,7 +35,7 @@ const experience = [
     role: "Inside Sales Representative",
     company: "GlowLogics Solutions",
     location: "Bengaluru, Karnataka, India",
-    duration: "Dec 2025 – Jan 2026",
+    duration: "Feb 2026 – March 2026",
     type: "Full-Time",
 
     description: [
